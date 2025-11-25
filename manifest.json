@@ -1,0 +1,46 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "TubeAdFree: Auto Skip & Block Ads",
+  "short_name": "TubeAdFree",
+  "version": "2.5.11.0",
+  "description": "Watch YouTube without ads! Automatically skip video ads instantly, remove annoying banners, enjoy ad-free videos. Fast, safe, 100% free forever. Works perfectly in 2025! - Minified build 2025-11-25",
+  "manifest_version": 3,
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
+      "48": "assets/icon-48.png",
+      "128": "assets/icon-128.png"
+    },
+    "default_title": "TubeAdFree: Auto Skip & Block Ads"
+  },
+  "background": {
+    "service_worker": "background/browser-worker.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ad-blocking-rules",
+        "enabled": false,
+        "path": "rules/rules.json"
+      }
+    ]
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

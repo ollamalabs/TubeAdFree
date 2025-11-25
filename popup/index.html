@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Video Ad Block Youtube</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'YouTube Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0f0f0f;
+            width: 380px;
+            min-height: 500px;
+        }
+
+        .container {
+            background: #0f0f0f;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            padding: 18px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(255, 0, 0, 0.15);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 48px;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            justify-content: center;
+        }
+
+        .logo-title-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: transparent;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-size: 19px;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 4px 0 0 52px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 52px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .toggle-switch.active {
+            background: #10b981;
+            border-color: #10b981;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(22px);
+        }
+
+        .toggle-status {
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: #212121;
+            border-radius: 12px;
+            padding: 16px 14px;
+            text-align: center;
+            border: 1px solid #3f3f3f;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 85px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255, 0, 0, 0.2);
+            border-color: #ff0000;
+            background: #272727;
+        }
+
+        .stat-value {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ff0000;
+            margin-bottom: 6px;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #aaaaaa;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .info-section {
+            background: #212121;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 1px solid #3f3f3f;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .info-row:not(:last-child) {
+            border-bottom: 1px solid #3f3f3f;
+        }
+
+        .info-label {
+            font-size: 13px;
+            color: #aaaaaa;
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-size: 13px;
+            color: #f1f1f1;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .action-btn {
+            background: #212121;
+            border: 1px solid #3f3f3f;
+            border-radius: 10px;
+            padding: 13px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #f1f1f1;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+
+        .action-btn:hover {
+            background: #272727;
+            border-color: #ff0000;
+            color: #ff0000;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.15);
+        }
+
+        .action-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .footer {
+            background: #181818;
+            padding: 18px 20px;
+            border-top: 1px solid #3f3f3f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #aaaaaa;
+            font-weight: 500;
+        }
+
+        .footer-link {
+            font-size: 12px;
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: #34d399;
+            text-decoration: underline;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #10b981;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+        }
+
+        .status-indicator.disabled {
+            background: #ff0000;
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .stats-container {
+            padding: 24px 20px;
+            background: #0f0f0f;
+        }
+    </style>
+    <script src="popup.js"></script>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-title-row">
+                        <img id="logo" alt="Logo" class="logo">
+                        <h1>TubeAdFree<sup style="font-size: 8px; margin-left: 2px;">™</sup></h1>
+                    </div>
+                    <p class="tagline">Auto Skip & Block Ads</p>
+                </div>
+                <div class="toggle-container">
+                    <span class="toggle-status" id="toggleStatus">ON</span>
+                    <div class="toggle-switch active" id="toggleSwitch">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalBlocked">0</div>
+                    <div class="stat-label">Ads Blocked</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="todayBlocked">0</div>
+                    <div class="stat-label">Today</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="timeSaved">0m</div>
+                    <div class="stat-label">Time Saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="activeStatus">
+                        <span class="status-indicator"></span>Active
+                    </div>
+                    <div class="stat-label">Status</div>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section">
+                <div class="info-row">
+                    <span class="info-label">Last Updated</span>
+                    <span class="info-value" id="lastUpdate">Just now</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Version</span>
+                    <span class="info-value">2.5.11</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn" id="resetStats">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+                    Reset Stats
+                </button>
+                <button class="action-btn" id="reportIssue">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    Report Issue
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span class="footer-text">Made with ❤️ for ad-free YouTube<sup style="font-size: 8px; margin-left: 1px;">TM</sup></span>
+        </div>
+    </div>
+</body>
+</html>
+
