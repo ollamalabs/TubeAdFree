@@ -2,6 +2,7 @@
 
 **Watch YouTube without ads! Automatically skip video ads instantly and enjoy a clean, ad-free experience.**
 
+[![Official Website](https://img.shields.io/badge/Website-tubeadfree.org-dc2626?style=for-the-badge&logo=google-chrome)](https://tubeadfree.org)
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Install%20Now-red?style=for-the-badge&logo=google-chrome)](https://chrome.google.com/webstore)
 [![Version](https://img.shields.io/badge/version-2.5.11-blue?style=for-the-badge)](https://github.com/ollamalabs/tubeadfree)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
@@ -27,6 +28,21 @@ No data collection. No tracking. Your privacy is protected. Open source and tran
 
 ### 💯 **Free Forever**
 Completely free to use. No premium features, no subscriptions, no hidden costs.
+
+---
+
+## 🌐 Official Website
+
+Visit our official website for more information, documentation, and support:
+
+👉 **[https://tubeadfree.org](https://tubeadfree.org)**
+
+The website includes:
+- 📖 Complete documentation and user guides
+- 🛡️ Privacy policy and terms of service
+- 💬 Community support and FAQ
+- 🎨 Feature showcase and screenshots
+- 📊 Browser compatibility information
 
 ---
 
@@ -112,10 +128,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- [Chrome Web Store](https://chrome.google.com/webstore)
-- [Report Issues](https://github.com/ollamalabs/tubeadfree/issues)
-- [Privacy Policy](https://yourwebsite.com/privacy)
-- [Support](https://github.com/ollamalabs/tubeadfree/discussions)
+- 🌐 [Official Website](https://tubeadfree.org) - Complete documentation and resources
+- 🛒 [Chrome Web Store](https://chrome.google.com/webstore) - Install the extension
+- 🐛 [Report Issues](https://github.com/ollamalabs/tubeadfree/issues) - Bug reports and feature requests
+- 🔒 [Privacy Policy](https://tubeadfree.org/privacy.html) - How we protect your data
+- 📜 [Terms of Service](https://tubeadfree.org/terms.html) - Usage terms and conditions
+- 💬 [Support](https://github.com/ollamalabs/tubeadfree/discussions) - Community discussions
 
 ---
 
@@ -143,8 +161,10 @@ cd tubeadfree/src
 
 Having issues? Need help?
 
-- 📧 Open an issue on GitHub
-- 💡 Check existing issues for solutions
+- 🌐 Visit [tubeadfree.org](https://tubeadfree.org) for comprehensive guides
+- 📧 Open an issue on [GitHub Issues](https://github.com/ollamalabs/tubeadfree/issues)
+- 💡 Check [existing issues](https://github.com/ollamalabs/tubeadfree/issues?q=is%3Aissue) for solutions
+- 📖 Read the [documentation](https://tubeadfree.org) on our official website
 - ⭐ Star this repo if you find it useful!
 
 ---
@@ -155,6 +175,10 @@ Having issues? Need help?
 
 ⭐ **Star this repo if TubeAdFree helps you!** ⭐
 
-[Install Now](https://chrome.google.com/webstore) • [Report Bug](https://github.com/ollamalabs/tubeadfree/issues) • [Request Feature](https://github.com/ollamalabs/tubeadfree/issues)
+[Official Website](https://tubeadfree.org) • [Install Now](https://chrome.google.com/webstore) • [Report Bug](https://github.com/ollamalabs/tubeadfree/issues) • [Request Feature](https://github.com/ollamalabs/tubeadfree/issues)
+
+---
+
+### 🌐 [Visit tubeadfree.org for more information](https://tubeadfree.org)
 
 </div>
