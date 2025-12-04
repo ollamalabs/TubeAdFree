@@ -3,7 +3,7 @@
 **Watch YouTube without ads! Automatically skip video ads instantly and enjoy a clean, ad-free experience.**
 
 [![Official Website](https://img.shields.io/badge/Website-tubeadfree.org-dc2626?style=for-the-badge&logo=google-chrome)](https://tubeadfree.org)
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Install%20Now-red?style=for-the-badge&logo=google-chrome)](https://chrome.google.com/webstore)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Install%20Now-red?style=for-the-badge&logo=google-chrome)](https://chromewebstore.google.com/detail/tubeadfree-auto-skip-bloc/jebcodjolkpffpgmkpnlnjhkjdpobnha)
 [![Version](https://img.shields.io/badge/version-2.5.11-blue?style=for-the-badge)](https://github.com/ollamalabs/tubeadfree)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 
@@ -49,7 +49,7 @@ The website includes:
 ## 📥 Installation
 
 ### Chrome Web Store (Recommended)
-1. Visit the [Chrome Web Store](https://chrome.google.com/webstore)
+1. Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/tubeadfree-auto-skip-bloc/jebcodjolkpffpgmkpnlnjhkjdpobnha)
 2. Click "Add to Chrome"
 3. Start enjoying ad-free YouTube immediately!
 
@@ -129,7 +129,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔗 Links
 
 - 🌐 [Official Website](https://tubeadfree.org) - Complete documentation and resources
-- 🛒 [Chrome Web Store](https://chrome.google.com/webstore) - Install the extension
+- 🛒 [Chrome Web Store](https://chromewebstore.google.com/detail/tubeadfree-auto-skip-bloc/jebcodjolkpffpgmkpnlnjhkjdpobnha) - Install the extension
 - 🐛 [Report Issues](https://github.com/ollamalabs/tubeadfree/issues) - Bug reports and feature requests
 - 🔒 [Privacy Policy](https://tubeadfree.org/privacy.html) - How we protect your data
 - 📜 [Terms of Service](https://tubeadfree.org/terms.html) - Usage terms and conditions
@@ -175,7 +175,7 @@ Having issues? Need help?
 
 ⭐ **Star this repo if TubeAdFree helps you!** ⭐
 
-[Official Website](https://tubeadfree.org) • [Install Now](https://chrome.google.com/webstore) • [Report Bug](https://github.com/ollamalabs/tubeadfree/issues) • [Request Feature](https://github.com/ollamalabs/tubeadfree/issues)
+[Official Website](https://tubeadfree.org) • [Install Now](https://chromewebstore.google.com/detail/tubeadfree-auto-skip-bloc/jebcodjolkpffpgmkpnlnjhkjdpobnha) • [Report Bug](https://github.com/ollamalabs/tubeadfree/issues) • [Request Feature](https://github.com/ollamalabs/tubeadfree/issues)
 
 ---
 
